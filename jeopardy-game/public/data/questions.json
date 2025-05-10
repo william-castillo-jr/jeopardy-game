@@ -1,0 +1,152 @@
+[
+    { 
+        "category": "Will Facts", 
+        "questions": [
+            {
+                "value": 100,
+                "question": "Where is Whidbey Island?",
+                "answer": "The island on which Will was born"
+            },
+            {
+                "value": 200,
+                "question": "",
+                "answer": ""
+            },
+            {
+                "value": 300,
+                "question": "What are horror movies?",
+                "answer": "The genre of movies that Will loves to watch on his own"
+            },
+            {
+                "value": 400,
+                "question": "Who is Olivia Rodrigo?",
+                "answer": "Will's Spotify Wrapped always includes this artist"
+            },
+            {
+                "value": 500,
+                "question": "",
+                "answer": ""
+            }
+        ]
+    },
+    {
+        "category": "James Facts", 
+        "questions": [
+            {
+                "value": 100,
+                "question": "Where is Yokosuka?",
+                "answer": "The city in which James was born."
+            },
+            {
+                "value": 200,
+                "question": "What is the University of Minnesota?",
+                "answer": "James' alma mater"
+            },
+            {
+                "value": 300,
+                "question": "What is the cello?",
+                "answer": "THe instrument James played for 8 years in grade school orchestra"
+            },
+            {
+                "value": 400,
+                "question": "Where is Long Beach, CA?",
+                "answer": "The place James ran his first marathon."
+            },
+            {
+                "value": 500,
+                "question": "What is Just the End?",
+                "answer": "The name of James' punk rock band in high school"
+            }
+        ]
+    },
+    {
+        "category": "Travel",
+        "questions": [
+            {
+                "value": 100,
+                "question": "What is Disney Land?",
+                "answer": "Will and James' favorite theme park."
+            },
+            {
+                "value": 200,
+                "question": "Where is Vancouver?",
+                "answer": "The first place Will and James traveled to as a couple."
+            },
+            {
+                "value": 300,
+                "question": "Where is Cancun?",
+                "answer": "THe Mexico vacation spot that Will and James loved."
+            },
+            {
+                "value": 400,
+                "question": "Where is Deception Pass (or Whidbey Island)?",
+                "answer": "The place James proposed to Will."
+            },
+            {
+                "value": 500,
+                "question": "Where is Hawaii?",
+                "answer": "Their next vacation spot."
+            }
+        ]
+    },
+    {
+        "category": "Media",
+        "questions": [
+            {
+                "value": 100,
+                "question": "What is Star Wars?",
+                "answer": "James' favorite movies (hint: tattoo on his wrist)."
+            },
+            {
+                "value": 200,
+                "question": "What is When We Were Young Fest?",
+                "answer": "The first music festival that Will and James attended together - in Las Vegas"
+            },
+            {
+                "value": 300,
+                "question": "What is Kingdom Hearts?",
+                "answer": "Will’s favorite video game and the inspiration for his cosplay at Sakura Con in 2024."
+            },
+            {
+                "value": 400,
+                "question": "What is Attack on Titan?",
+                "answer": "Will and James’ favorite anime (after James finally convinced Will to watch it and he fell in love with it)."
+            },
+            {
+                "value": 500,
+                "question": "",
+                "answer": ""
+            }
+        ]
+    },
+    {
+        "category": "Random Facts",
+        "questions": [
+            {
+                "value": 100,
+                "question": "Who is Genji?",
+                "answer": "The name of the bestest German Shepherd in the universe."
+            },
+            {
+                "value": 200,
+                "question": "What is Playa Vista?",
+                "answer": "The name of the city to which James and Will are moving."
+            },
+            {
+                "value": 300,
+                "question": "What is 3.5 years?",
+                "answer": "How long Will and James were together before getting engaged."
+            },
+            {
+                "value": 400,
+                "question": "",
+                "answer": ""
+            },
+            {
+                "value": 500,
+                "question": "",
+                "answer": ""
+            }
+        ]
+    }
+]
