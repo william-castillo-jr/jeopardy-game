@@ -60,6 +60,36 @@
         ]
     },
     {
+        "category": "Will or James", 
+        "questions": [
+            {
+                "value": 100,
+                "question": "Where is Yokosuka?",
+                "answer": "The city in which James was born."
+            },
+            {
+                "value": 200,
+                "question": "What is the University of Minnesota?",
+                "answer": "James' alma mater"
+            },
+            {
+                "value": 300,
+                "question": "What is the cello?",
+                "answer": "THe instrument James played for 8 years in grade school orchestra"
+            },
+            {
+                "value": 400,
+                "question": "Where is Long Beach, CA?",
+                "answer": "The place James ran his first marathon."
+            },
+            {
+                "value": 500,
+                "question": "What is Just the End?",
+                "answer": "The name of James' punk rock band in high school"
+            }
+        ]
+    },
+    {
         "category": "Travel",
         "questions": [
             {
