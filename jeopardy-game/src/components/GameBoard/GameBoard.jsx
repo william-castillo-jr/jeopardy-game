@@ -4,43 +4,51 @@ import QuestionModal from '../QuestionModal/QuestionModal.jsx'
 import Card from './../Card/Card.jsx'
 import './GameBoard.css'
 
+import Box from '@mui/material/Box'
+import Grow from '@mui/material/Grow'
+
+
 function GameBoard() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [checked, setChecked] = React.useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
-    setIsModalOpen(true);
+    setChecked(true)
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedQuestion(null);
-  };
+  const handleBackToBoard = () => {
+    setChecked(false);
+    setTimeout(() => setSelectedQuestion(null), 300);
+  }
 
   return (
-    <div className="categories">
-      {_questions.map((category, index) => (
-        <div key={index} className="category">
-          <h2>{category.category}</h2>
-          {category.questions.map((question, idx) => (
-            <Card
-              key={idx}
-              question={question}
-              onClick={() => handleQuestionClick(question)}
-            >
-              ${question.value}
-            </Card>
+    <>
+      <Grow in={!selectedQuestion} timeout={500}>
+        <div className="categories">
+          {_questions.map((category, index) => (
+            <div key={index} className="category">
+              <h2 className="category-name">{category.category}</h2>
+              {category.questions.map((question, idx) => (
+                <Card
+                  key={idx}
+                  question={question}
+                  onClick={() => handleQuestionClick(question)}
+                />
+              ))}
+            </div>
           ))}
         </div>
-      ))}
-      {isModalOpen && selectedQuestion && (
-        <QuestionModal
-          question={selectedQuestion}
-          onClose={handleCloseModal}
-        />
+      </Grow>
+
+      {selectedQuestion && (
+        <Grow in={checked} timeout={500}>
+          <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
+            <QuestionModal question={selectedQuestion} onClose={handleBackToBoard} />
+          </Box>
+        </Grow>
       )}
-    </div>
+    </>
   );
 }
 
