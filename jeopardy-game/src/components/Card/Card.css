@@ -1,12 +1,12 @@
 .card {
   background: #ffc824e1;
   color: #ffffff; 
-  width: 210px;
-  height: 150px;
+  width: 250px;
+  height: 200px;
   border: solid 1px white;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
   display: flex;
   align-items: center;
