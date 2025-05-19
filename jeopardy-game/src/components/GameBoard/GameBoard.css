@@ -1,13 +1,12 @@
 .categories {
   display: flex;
-  flex: 4;
   gap: 2px;
   justify-content: center;
   flex-wrap: nowrap;
   border: solid 1px white;
   border-radius: 8px;
   height: 90vh; 
-  /* width: 0vw; */
+  width: 75vw;
   background: rgba(255, 255, 255, 0.054);
   backdrop-filter: blur(10px);
   border-radius: 16px;
