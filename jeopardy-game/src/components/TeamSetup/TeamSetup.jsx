@@ -1,7 +1,7 @@
 function TeamSetup() {
     return (
         <div>
-        
+            
         </div>
     )
 }
