@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import './Scoreboard.css';
+import GameComplete from './../GameComplete/GameComplete.jsx'
 
-function Scoreboard() {
+import Box from '@mui/material/Box'
+import Grow from '@mui/material/Grow'
+
+function Scoreboard({ onComplete }) {
     const [players, setPlayers] = useState([
         {name: 'Team 1', score: 1},
         {name: 'Team 2', score: 2}
@@ -12,6 +16,7 @@ function Scoreboard() {
         updatedPlayers[index].score += amount;
         setPlayers(updatedPlayers);
     }
+    
 
     return (
     <>
@@ -27,6 +32,7 @@ function Scoreboard() {
                     </div>
                 </div>
             ))}
+            <button onClick={onComplete}>End Game</button>
         </div>
     </>
     )
