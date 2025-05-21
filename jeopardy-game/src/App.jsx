@@ -7,13 +7,17 @@ import GameComplete from './components/GameComplete/GameComplete.jsx'
 function App() {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [viewMode, setViewMode] = useState('game')
+  const [checked, setChecked] = useState(true);
 
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
+    setChecked(false);
   }
 
   const handleBackToBoard = () => {
+    setChecked(true);
     setSelectedQuestion(null);
+    setTimeout(() => setSelectedQuestion(null), 500);
   }
 
   const handleGameComplete = () => {
@@ -27,12 +31,14 @@ function App() {
           <GameBoard selectedQuestion={selectedQuestion}
             onQuestionClick={handleQuestionClick}
             onClose={handleBackToBoard}
+            checked={checked}
           />
-        {!selectedQuestion && <Scoreboard onComplete={handleGameComplete} />}
-      </>
+          <Scoreboard onComplete={handleGameComplete} selectedQuestion={selectedQuestion} 
+          checked={checked}/>
+        </> 
       )} 
 
-      {viewMode === 'complete' && <GameComplete />}
+      {viewMode === 'complete' && <GameComplete onReturnToGame={() => setViewMode('game')} />}
   </div>
   );
 }

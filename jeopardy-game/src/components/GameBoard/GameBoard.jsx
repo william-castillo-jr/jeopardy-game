@@ -8,23 +8,10 @@ import Box from '@mui/material/Box'
 import Grow from '@mui/material/Grow'
 
 
-function GameBoard() {
-  const [checked, setChecked] = React.useState(false);
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
-
-  const handleQuestionClick = (question) => {
-    setSelectedQuestion(question);
-    setChecked(true)
-  };
-
-  const handleBackToBoard = () => {
-    setChecked(false);
-    setTimeout(() => setSelectedQuestion(null), 300);
-  }
-
+function GameBoard({ selectedQuestion, onQuestionClick, onClose, checked }) {
   return (
     <>
-      <Grow in={!selectedQuestion} timeout={500}>
+      <Grow in={!selectedQuestion && checked} timeout={500}>
         <div className="categories">
           {_questions.map((category, index) => (
             <div key={index} className="category">
@@ -33,7 +20,7 @@ function GameBoard() {
                 <Card
                   key={idx}
                   question={question}
-                  onClick={() => handleQuestionClick(question)}
+                  onClick={() => onQuestionClick(question)}
                 />
               ))}
             </div>
@@ -42,9 +29,9 @@ function GameBoard() {
       </Grow>
 
       {selectedQuestion && (
-        <Grow in={checked} timeout={500}>
+        <Grow in={!checked} timeout={500}>
           <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
-            <QuestionModal question={selectedQuestion} onClose={handleBackToBoard} />
+            <QuestionModal question={selectedQuestion} onClose={onClose} />
           </Box>
         </Grow>
       )}
