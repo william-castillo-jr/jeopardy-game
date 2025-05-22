@@ -11,15 +11,20 @@ function QuestionModal({ question, onClose }) {
         <div className="modal-overlay" onClick={onClose}> 
           <div className="modal-content" onClick={(e) => e.stopPropagation()} >
         {showContents ? (
-          <>
-            <p className="question-category">Question Category</p>
-            <button className="card-cost">Card button with cost</button>
-            <p>{question.answer}</p>
-            <button onClick={onClose}>Close</button>    
-            <button className="answer" onClick={handleToggleContents}>Show Answer</button>
-          </> ) : <Answer answer={question.question} onClose={onClose}/>}
+  <>
+    <p className="question-category">{question.category_name}</p>
+    <button className="card-cost" disabled>{`$${question.value}`}</button>
+    <p className="question">{question.answer}</p>
+    
+    <div className="question-button-group">
+      <button onClick={onClose} className="close-button">Close</button>
+      <button onClick={handleToggleContents} className="answer-button">Show Answer</button>
+    </div>
+  </>
+) : (
+  <Answer answer={question.question} onClose={onClose}/>
+)}
         </div>
-        
       </div>
     );
 }

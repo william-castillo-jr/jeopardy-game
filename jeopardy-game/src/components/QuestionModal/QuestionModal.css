@@ -1,5 +1,5 @@
 .modal-overlay {
-position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,27 +11,56 @@ position: fixed;
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.054); /* Match GameBoard */
+  background: rgba(255, 255, 255, 0.054);
   border: solid 1px white;
-  backdrop-filter: blur(10px); /* Match GameBoard */
+  backdrop-filter: blur(10px);
   padding: 30px;
-  border-radius: 16px; /* Match GameBoard */
+  border-radius: 16px;
   max-width: 80vw;
   height: 80vh;
   width: 90%;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.modal-content button {
-  background-color: #1e90ff;
+.question-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.close-button {
+  background-color: red;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
+  border: white solid 2px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
+  font-size: 40px;
+  border: white solid 2px;
+  padding: 0;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.answer-button {
+  background-color: green;
+  color: #fff;
+  border: white solid 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 40px;
+  border: white solid 2px;
+  padding: 0;
+  width: 450px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .modal-content button:hover {
   background-color: #007bff;
@@ -45,5 +74,21 @@ position: fixed;
 .card-cost {
   display: block;
   margin: 0 auto;
+  background: #ffc824e1;
+  color: #ffffff; 
+  width: 500px;
+  height: 100px;
+  border: solid 1px white;
+  border-radius: 8px;
+  font-size: 60px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
 }
 
+.question {
+  font-size: 70px;
+  text-align: center;
+  margin: 150px auto;
+}
