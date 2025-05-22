@@ -1,10 +1,13 @@
-import React from 'react';
 import './Card.css';
 
 const Card = ({ question, onClick }) => {
   return (
-    <button className="card" onClick={() => onClick(question)}>
-      ${question.value}
+    <button
+      className={`card ${question.isAnswered ? 'answered' : ''}`}
+      onClick={() => onClick(question)}
+      disabled={question.isAnswered}
+    >
+    {question.isAnswered ? '✓' : `$${question.value}`}
     </button>
   );
 };

@@ -19,3 +19,10 @@
   background-color: #ebde21;
   transform: scale(1.05);
 }
+
+.card.answered {
+  background-color: #ffffff;
+  color: green;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}
