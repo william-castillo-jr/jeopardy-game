@@ -6,10 +6,11 @@ import './GameBoard.css';
 import Box from '@mui/material/Box';
 import Grow from '@mui/material/Grow';
 
-function GameBoard({ selectedQuestion, onQuestionClick, onClose, checked }) {
+function GameBoard({ selectedQuestion, onQuestionClick, onClose, checked, refreshKey }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+    console.log("Fetching cards due to refreshKey change:", refreshKey);
     fetch('http://localhost:3000/cards')
       .then((res) => res.json())
       .then((data) => {
@@ -30,7 +31,7 @@ function GameBoard({ selectedQuestion, onQuestionClick, onClose, checked }) {
       .catch((err) => {
         console.error('Error fetching cards:', err);
       });
-  }, []);
+  }, [refreshKey]);
 
   return (
     <>
