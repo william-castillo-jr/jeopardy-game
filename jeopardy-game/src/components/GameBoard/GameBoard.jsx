@@ -1,19 +1,42 @@
-import React, { useState } from 'react';
-import _questions from "./../../../public/data/questions.json";
-import QuestionModal from '../QuestionModal/QuestionModal.jsx'
-import Card from './../Card/Card.jsx'
-import './GameBoard.css'
+import React, { useState, useEffect } from 'react';
+import QuestionModal from '../QuestionModal/QuestionModal.jsx';
+import Card from './../Card/Card.jsx';
+import './GameBoard.css';
 
-import Box from '@mui/material/Box'
-import Grow from '@mui/material/Grow'
-
+import Box from '@mui/material/Box';
+import Grow from '@mui/material/Grow';
 
 function GameBoard({ selectedQuestion, onQuestionClick, onClose, checked }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/cards')
+      .then((res) => res.json())
+      .then((data) => {
+        const grouped = data.reduce((acc, card) => {
+          const cat = card.category_name || 'Uncategorized';
+          if (!acc[cat]) acc[cat] = [];
+          acc[cat].push(card);
+          return acc;
+        }, {});
+
+        const categoriesArray = Object.entries(grouped).map(([category, questions]) => ({
+          category,
+          questions,
+        }));
+
+        setCategories(categoriesArray);
+      })
+      .catch((err) => {
+        console.error('Error fetching cards:', err);
+      });
+  }, []);
+
   return (
     <>
       <Grow in={!selectedQuestion && checked} timeout={500}>
         <div className="categories">
-          {_questions.map((category, index) => (
+          {categories.map((category, index) => (
             <div key={index} className="category">
               <h2 className="category-name">{category.category}</h2>
               {category.questions.map((question, idx) => (

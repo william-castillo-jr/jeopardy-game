@@ -15,10 +15,19 @@ function App() {
   }
 
   const handleBackToBoard = () => {
+    if (selectedQuestion) {
+      handleMarkAnswered(selectedQuestion.id);
+    }
     setChecked(true);
     setSelectedQuestion(null);
     setTimeout(() => setSelectedQuestion(null), 500);
   }
+
+  const handleMarkAnswered = (cardId) => {
+    fetch(`http://localhost:3000/cards/${cardId}/answered`, {
+      method: 'PATCH',
+    });
+  };
 
   const handleGameComplete = () => {
     setViewMode('complete');
@@ -36,8 +45,7 @@ function App() {
           <Scoreboard onComplete={handleGameComplete} selectedQuestion={selectedQuestion} 
           checked={checked}/>
         </> 
-      )} 
-
+      )}
       {viewMode === 'complete' && <GameComplete onReturnToGame={() => setViewMode('game')} />}
   </div>
   );

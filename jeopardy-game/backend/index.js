@@ -1,14 +1,16 @@
 var express = require('express');
 var bodyParser = require("body-parser");
+const cors = require('cors');
 const jeopardy = require('./jeopardy');
 
 var app = express();
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // GET all teams
 app.get("/cards", async function(req, res) {
-    const allCards = await jeopardy.getCards();
+    const allCards = await jeopardy.getCardsWithCategory();    
     res.send(allCards);
 });
 
@@ -38,6 +40,13 @@ app.patch("/teams/:id/score", async function(req, res) {
     const points = req.body.points;
     await jeopardy.updateTeamScore(id, points);
     res.send({ "message": "Score updated successfully" });
+});
+
+// PATCH to update card status
+app.patch("/cards/:id/answered", async function(req, res) {
+  const id = req.params.id;
+  await jeopardy.handleMarkAnswered(id);
+  res.send({ message: "Card marked as answered" });
 });
 
 // DELETE a team

@@ -1,5 +1,20 @@
 const db = require('./db');
 
+function getCardsWithCategory() {
+    return new Promise((resolve, reject) => {
+        db.all(`
+            SELECT cards.*, categories.name AS category_name
+            FROM cards
+            JOIN categories ON cards.category_id = categories.id
+        `, (err, rows) => {
+            if (err)
+                reject(err);
+            else
+                resolve(rows);
+        });
+    });
+}
+
 function getCards() {
     return new Promise((resolve, reject) => {
         db.all('SELECT * FROM cards', (err, rows) => {
@@ -67,7 +82,18 @@ function deleteTeam(id) {
     });
 }
 
+function handleMarkAnswered(id) {
+  return new Promise((resolve, reject) => {
+    db.run('UPDATE cards SET isAnswered = 1 WHERE id = ?', id, function(err) {
+      if (err) reject(err);
+      else resolve();
+    });
+  });
+}
+
 module.exports = {
+    handleMarkAnswered,
+    getCardsWithCategory,
     getCards,
     getTeams,
     getTeamById,
