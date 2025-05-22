@@ -1,0 +1,51 @@
+.answer-button-group {
+  margin-top: 210px;    /* control space between buttons and answer text */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.answer-text-container {
+  margin-top: 100px;   /* pushes answer text down */
+  margin-bottom: 20px; /* smaller space below answer text */
+}
+
+
+.close-button {
+  background-color: red;
+  color: #fff;
+  border: white solid 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 40px;
+  border: white solid 2px;
+  padding: 0;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.winning-team-button {
+  background-color: green;
+  color: #fff;
+  border: white solid 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 40px;
+  border: white solid 2px;
+  padding: 0;
+  width: 450px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-text {
+  font-size: 70px;
+  text-align: center;
+  margin-top: 400px;           /* remove big margin so no extra space */
+}

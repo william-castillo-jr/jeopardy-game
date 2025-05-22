@@ -1,16 +1,15 @@
-import { useState } from 'react'
 import './Answer.css'
 
 function Answer({ answer, onClose }) {
-    // const [isVisible, setIsVisible] = useState(false);
-
-    // const handleShowAnswer = () => setIsVisible(true);
-
     return (
         <div className="answer-container">
-            <p className="answer-text">{answer}</p>
-            <button onClick={onClose}>Close</button>
-            <button>Choose Winning Team</button>
+            <div className="answer-text-container">
+  <p className="answer-text">{answer}</p>
+</div>
+            <div className="answer-button-group" >
+<button className="close-button"onClick={onClose}>Close</button>
+            <button className="winning-team-button">Choose Winning Team</button>
+            </div>
         </div>
     )
 }
