@@ -2,7 +2,7 @@
   background: #ffc824e1;
   color: #ffffff; 
   width: 250px;
-  height: 200px;
+  height: 155px;
   border: solid 1px white;
   border-radius: 8px;
   cursor: pointer;
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px;
+  margin: 10px;
   transition: background-color 0.3s, transform 0.3s;
 }
 

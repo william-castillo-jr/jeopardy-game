@@ -35,21 +35,24 @@ function GameBoard({ selectedQuestion, onQuestionClick, onClose, checked }) {
   return (
     <>
       <Grow in={!selectedQuestion && checked} timeout={500}>
-        <div className="categories">
-          {categories.map((category, index) => (
-            <div key={index} className="category">
-              <h2 className="category-name">{category.category}</h2>
-              {category.questions.map((question, idx) => (
-                <Card
-                  key={idx}
-                  question={question}
-                  onClick={() => onQuestionClick(question)}
-                />
-              ))}
+          <div className="gameboard-container">
+          <h1 className="gameboard-title">Will and James Jeopardy Game</h1>
+          <div className="categories">
+            {categories.map((category, index) => (
+              <div key={index} className="category">
+                <h2 className="category-name">{category.category}</h2>
+                {category.questions.map((question, idx) => (
+                  <Card
+                    key={idx}
+                    question={question}
+                    onClick={() => onQuestionClick(question)}
+                  />
+                ))}
+              </div>
+            ))}
             </div>
-          ))}
-        </div>
-      </Grow>
+          </div>
+    </Grow>
 
       {selectedQuestion && (
         <Grow in={!checked} timeout={500}>
