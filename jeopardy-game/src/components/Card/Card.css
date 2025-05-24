@@ -1,8 +1,8 @@
 .card {
   background: #ffc824e1;
   color: #ffffff; 
-  width: 250px;
-  height: 155px;
+  width: 300px;
+  height: 175px;
   border: solid 1px white;
   border-radius: 8px;
   cursor: pointer;
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  margin: 5px;
   transition: background-color 0.3s, transform 0.3s;
 }
 

@@ -1,15 +1,14 @@
 .answer-button-group {
-  margin-top: 210px;    /* control space between buttons and answer text */
+  margin-top: 200px;    /* control space between buttons and answer text */
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
 .answer-text-container {
-  margin-top: 100px;   /* pushes answer text down */
-  margin-bottom: 20px; /* smaller space below answer text */
+  margin-top: 0px;   /* pushes answer text down */
+  margin-bottom: 1px; /* smaller space below answer text */
 }
-
 
 .close-button {
   background-color: red;
@@ -25,6 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.close-button:hover {
+  background-color: darkred
 }
 
 .winning-team-button {
@@ -47,5 +50,5 @@
 .answer-text {
   font-size: 70px;
   text-align: center;
-  margin-top: 400px;           /* remove big margin so no extra space */
+  margin-top: 160px;           /* remove big margin so no extra space */
 }

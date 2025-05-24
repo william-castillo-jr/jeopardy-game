@@ -1,6 +1,6 @@
 .categories {
   display: flex;
-  gap: 2px;
+  gap: 30px;
   justify-content: center;
   flex-wrap: nowrap;
 }
@@ -8,8 +8,8 @@
 .category-name {
   background: #ffc824e1;
   color: white; 
-  width: 250px;
-  height: 150px;
+  width: 300px;
+  height: 175px;
   border: solid 1px white;
   border-radius: 8px;
   font-size: 40px;
@@ -38,8 +38,8 @@
   padding: 20px;
   margin: 10px;
   border: 1px solid white;
-  height: 90vh; 
-  width: 75vw;
+  height: 95vh; 
+  width: 100vw;
 }
 
 .gameboard-title {
