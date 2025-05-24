@@ -22,7 +22,7 @@ function QuestionModal({ question, onClose }) {
     </div>
   </>
 ) : (
-  <Answer answer={question.question} onClose={onClose}/>
+  <Answer answer={question.question} onClose={onClose} question={question}/>
 )}
         </div>
       </div>
